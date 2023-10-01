@@ -12,6 +12,7 @@ dotenv.config()
 
 
 app.use(express.json())
+const PORT = process.env.PORT || 8080
 
 const connect = async () =>{
     try {
@@ -58,7 +59,7 @@ app.use((err, req, res, next) =>{
 })
 
 
-app.listen('https://reservationapi.onrender.com' || 8080, () => {
+app.listen(PORT, () => {
     connect()
     console.log('Connected to backend')
 })
